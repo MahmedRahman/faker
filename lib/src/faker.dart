@@ -1,6 +1,7 @@
 import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
 import 'package:faker/src/phone_number.dart';
+import 'package:faker/src/providers/ar_providers.dart';
 import 'package:faker/src/providers/default_providers.dart';
 import 'package:faker/src/providers/fa_providers.dart';
 
@@ -55,8 +56,7 @@ class Faker {
         internet = Internet(random),
         job = Job(random),
         jwt = Jwt(),
-        lorem = Lorem(
-            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        lorem = Lorem(random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = Person(random),
         sport = Sport(random),
         date = Date(random),
@@ -76,4 +76,8 @@ class FakerDataProvider {
 
 class FakerDataProviderFa extends FakerDataProvider {
   FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+}
+
+class FakerDataProviderAr extends FakerDataProvider {
+  FakerDataProviderAr() : super(loremDataProvider: LoremDataProviderAr());
 }
